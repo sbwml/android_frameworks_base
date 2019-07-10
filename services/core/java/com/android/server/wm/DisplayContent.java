@@ -820,6 +820,12 @@ class DisplayContent extends WindowContainer<DisplayContent.DisplayChildWindowCo
             }
         }
 
+        if (mService != null && mService.mDisplayModeManager != null) {
+            int screenMode = mService.mDisplayModeManager.getScreenMode();
+            if (screenMode != -1)
+                mTmpApplySurfaceChangesTransactionState.preferredModeId = screenMode;
+        }
+
         if (obscuredChanged && w.isVisibleLw() && mWallpaperController.isWallpaperTarget(w)) {
             // This is the wallpaper target and its obscured state changed... make sure the
             // current wallpaper's visibility has been updated accordingly.
@@ -3739,6 +3745,12 @@ class DisplayContent extends WindowContainer<DisplayContent.DisplayChildWindowCo
         } while (pendingLayoutChanges != 0);
 
         mTmpApplySurfaceChangesTransactionState.reset();
+
+        if (mService != null && mService.mDisplayModeManager != null) {
+            int screenMode = mService.mDisplayModeManager.getScreenMode();
+            if (screenMode != -1)
+                mTmpApplySurfaceChangesTransactionState.preferredModeId = screenMode;
+        }
 
         mTmpRecoveringMemory = recoveringMemory;
 

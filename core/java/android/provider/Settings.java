@@ -4752,6 +4752,12 @@ public final class Settings {
         public static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
 
         /**
+         * @hide
+         */
+        public static final String DISPLAY_MODE = "display_mode";
+        private static final Validator DISPLAY_MODE_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4815,6 +4821,7 @@ public final class Settings {
             DISPLAY_COLOR_MODE,
             ALARM_ALERT,
             NOTIFICATION_LIGHT_PULSE,
+            DISPLAY_MODE,
         };
 
         /**
@@ -4933,6 +4940,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(LOCK_TO_APP_ENABLED);
             PRIVATE_SETTINGS.add(EGG_MODE);
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_MODE);
+            PRIVATE_SETTINGS.add(DISPLAY_MODE);
         }
 
         /**
@@ -5027,6 +5035,7 @@ public final class Settings {
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(ACCELEROMETER_ROTATION_ANGLES,
                     ACCELEROMETER_ROTATION_ANGLES_VALIDATOR);
+            VALIDATORS.put(DISPLAY_MODE, DISPLAY_MODE_VALIDATOR);
         }
 
         /**

@@ -124,4 +124,6 @@ interface IDisplayManager {
     // The wide gamut color space is returned from composition pipeline
     // based on hardware capability.
     int getPreferredWideGamutColorSpaceId();
+    
+    void requestScreenMode(int i);
 }

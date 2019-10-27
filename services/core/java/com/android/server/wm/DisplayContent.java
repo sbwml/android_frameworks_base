@@ -820,8 +820,8 @@ class DisplayContent extends WindowContainer<DisplayContent.DisplayChildWindowCo
             }
         }
 
-        if (mService != null && mService.mDisplayModeManager != null) {
-            int screenMode = mService.mDisplayModeManager.getScreenMode();
+        if (mWmService != null && mWmService.mDisplayModeManager != null) {
+            int screenMode = mWmService.mDisplayModeManager.getScreenMode();
             if (screenMode != -1)
                 mTmpApplySurfaceChangesTransactionState.preferredModeId = screenMode;
         }
@@ -3746,8 +3746,8 @@ class DisplayContent extends WindowContainer<DisplayContent.DisplayChildWindowCo
 
         mTmpApplySurfaceChangesTransactionState.reset();
 
-        if (mService != null && mService.mDisplayModeManager != null) {
-            int screenMode = mService.mDisplayModeManager.getScreenMode();
+        if (mWmService != null && mWmService.mDisplayModeManager != null) {
+            int screenMode = mWmService.mDisplayModeManager.getScreenMode();
             if (screenMode != -1)
                 mTmpApplySurfaceChangesTransactionState.preferredModeId = screenMode;
         }
